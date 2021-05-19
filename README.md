@@ -24,6 +24,15 @@ $ cd pycuda-VERSION
 Open configure.py and change the /usr/bin/env python into /usr/bin/env python3
 ```
 $ ./configure.py
+```
+If an issue is encountered with cuda (not being found), set the path manually:
+```
+$ export CUDA_HOME=/home/usr/local/cuda-9.0
+$ export PATH=$CUDA_HOME/bin:$PATH
+$ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+```
+and then:
+```
 $ make -j4
 $ sudo python3 setup.py install
 $ sudo pip3 install .
